@@ -1,0 +1,148 @@
+{
+  "firstLayout": "",
+  "gdVersion": {
+    "build": 99,
+    "major": 4,
+    "minor": 0,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "folderProject": true,
+    "orientation": "landscape",
+    "packageName": "com.draganddrop.game",
+    "pixelsRounding": false,
+    "projectUuid": "52d65a29-354d-4118-9d7b-ffe00c48310e",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "adaptWidth",
+    "useExternalSourceFiles": false,
+    "version": "1.0.0",
+    "name": "DragAndDrop",
+    "description": "",
+    "author": "",
+    "windowWidth": 800,
+    "windowHeight": 600,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {},
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0.2,
+      "minDuration": 1.5,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": true,
+      "showProgressBar": true
+    },
+    "authorIds": [
+      "WaI1KDE5GTesEW1yUHMBxdHqf8s1"
+    ],
+    "categories": [],
+    "playableDevices": [],
+    "extensionProperties": [
+      {
+        "extension": "Firebase",
+        "property": "FirebaseConfig",
+        "value": "{\n  apiKey: \"AIzaSyByC48CSiK2ewT1bm9FFCKI3OPq4mcIMsY\",\n  authDomain: \"euler-cashmere.firebaseapp.com\",\n  databaseURL: \"https://euler-cashmere-default-rtdb.asia-southeast1.firebasedatabase.app\",\n  projectId: \"euler-cashmere\",\n  storageBucket: \"euler-cashmere.appspot.com\",\n  messagingSenderId: \"827559291813\",\n  appId: \"1:827559291813:web:3ecd3476991f406b1a164c\",\n  measurementId: \"G-KE5ZCT3ZHR\"\n}"
+      }
+    ],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "alwaysLoaded": false,
+        "file": "assets/QuestionBlock.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\QuestionBlock.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Roboto/Roboto-Bold.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets\\Roboto\\Roboto-Bold.ttf",
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/ToolBlock.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ToolBlock.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/ToolBlock-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ToolBlock-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/RunButton-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\RunButton-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/RunButton-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\RunButton-1-0.png",
+        "smoothed": true,
+        "userAdded": true
+      }
+    ],
+    "resourceFolders": []
+  },
+  "objects": [],
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/game"
+    }
+  ],
+  "externalEvents": [],
+  "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/linktools"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/sticker"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/stayonscreen"
+    }
+  ],
+  "externalLayouts": [],
+  "externalSourceFiles": []
+}
