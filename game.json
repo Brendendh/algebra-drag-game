@@ -20,8 +20,8 @@
     "name": "DragAndDrop",
     "description": "",
     "author": "",
-    "windowWidth": 800,
-    "windowHeight": 600,
+    "windowWidth": 1920,
+    "windowHeight": 1080,
     "latestCompilationDirectory": "",
     "maxFPS": 60,
     "minFPS": 20,
@@ -52,7 +52,7 @@
       {
         "extension": "Firebase",
         "property": "FirebaseConfig",
-        "value": "{\n  apiKey: \"AIzaSyByC48CSiK2ewT1bm9FFCKI3OPq4mcIMsY\",\n  authDomain: \"euler-cashmere.firebaseapp.com\",\n  databaseURL: \"https://euler-cashmere-default-rtdb.asia-southeast1.firebasedatabase.app\",\n  projectId: \"euler-cashmere\",\n  storageBucket: \"euler-cashmere.appspot.com\",\n  messagingSenderId: \"827559291813\",\n  appId: \"1:827559291813:web:3ecd3476991f406b1a164c\",\n  measurementId: \"G-KE5ZCT3ZHR\"\n}"
+        "value": "{\n  \"apiKey\": \"AIzaSyAe3jKTNf1t2PlmKK7G2qQhIBvhyk88ptk\",\n  \"authDomain\": \"kepler-cashmere.firebaseapp.com\",\n  \"projectId\": \"kepler-cashmere\",\n  \"storageBucket\": \"kepler-cashmere.appspot.com\",\n  \"messagingSenderId\": \"157833753747\",\n  \"appId\": \"1:157833753747:web:2bed015576360e1b620966\",\n  \"measurementId\": \"G-09YR9FH6VS\"\n}"
       }
     ],
     "platforms": [
@@ -130,6 +130,10 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/mousehelper"
+    },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/linktools"

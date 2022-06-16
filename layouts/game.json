@@ -21,7 +21,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.775,
+    "zoomFactor": 0.5149999999999999,
     "windowMask": false
   },
   "objectsGroups": [
@@ -72,7 +72,13 @@
       "folded": true,
       "name": "Equation",
       "type": "string",
-      "value": ""
+      "value": "test"
+    },
+    {
+      "folded": true,
+      "name": "Equation_Error",
+      "type": "string",
+      "value": "test"
     }
   ],
   "instances": [
@@ -222,9 +228,9 @@
       "effects": [],
       "behaviors": [
         {
+          "checkCollisionMask": false,
           "name": "Draggable",
-          "type": "DraggableBehavior::Draggable",
-          "checkCollisionMask": true
+          "type": "DraggableBehavior::Draggable"
         }
       ],
       "animations": [
@@ -254,19 +260,19 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 90.81761169433594,
+                        "y": 238.87515258789062
                       },
                       {
-                        "x": 622,
-                        "y": 0
+                        "x": 196.39308166503906,
+                        "y": 237.73992919921875
                       },
                       {
-                        "x": 622,
+                        "x": 192.9874267578125,
                         "y": 270
                       },
                       {
-                        "x": 0,
+                        "x": 90.81761169433594,
                         "y": 270
                       }
                     ]
@@ -330,9 +336,9 @@
       "effects": [],
       "behaviors": [
         {
+          "checkCollisionMask": false,
           "name": "Draggable",
-          "type": "DraggableBehavior::Draggable",
-          "checkCollisionMask": true
+          "type": "DraggableBehavior::Draggable"
         }
       ],
       "animations": [
@@ -345,7 +351,7 @@
               "timeBetweenFrames": 0.07999999821186066,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "assets\\ToolBlock-1.png",
                   "points": [],
                   "originPoint": {
@@ -359,7 +365,26 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 82.8710708618164,
+                        "y": 0
+                      },
+                      {
+                        "x": 202.06918334960938,
+                        "y": 0
+                      },
+                      {
+                        "x": 198.6635284423828,
+                        "y": 31.2540283203125
+                      },
+                      {
+                        "x": 91.95282745361328,
+                        "y": 30.11880874633789
+                      }
+                    ]
+                  ]
                 }
               ]
             }
@@ -431,7 +456,7 @@
               "timeBetweenFrames": 0.07999999821186066,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\RunButton-1-0.png",
                   "points": [],
                   "originPoint": {
@@ -445,26 +470,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -538,6 +544,52 @@
             "ToolBlockText",
             "=",
             "ToolBlock.VariableString(BlockType)+ToolBlock.VariableString(NumberInput)+ \"             \" + ToolBlock.VariableString(BlockType)+ToolBlock.VariableString(NumberInput)"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Firebase::FirestoreGetField"
+          },
+          "parameters": [
+            "\"assets\"",
+            "\"equations\"",
+            "\"1)\"",
+            "Equation",
+            "Equation_Error"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "VarSceneTxt"
+          },
+          "parameters": [
+            "Equation",
+            "!=",
+            "\"test\""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "BBText::SetBBText"
+          },
+          "parameters": [
+            "QuestionBlockText",
+            "=",
+            "VariableString(Equation)"
           ],
           "subInstructions": []
         }
@@ -796,6 +848,52 @@
         {
           "type": {
             "inverted": false,
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "a"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Sticker::IsStuck"
+          },
+          "parameters": [
+            "",
+            "QuestionBlockText",
+            "Sticker",
+            "QuestionBlockObject",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Sticker::IsStuck"
+          },
+          "parameters": [
+            "",
+            "ToolBlockText",
+            "Sticker",
+            "ToolBlock",
+            ""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
             "value": "MouseButtonReleased"
           },
           "parameters": [
@@ -868,49 +966,6 @@
           "events": []
         }
       ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "DepartScene"
-          },
-          "parameters": [
-            ""
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "Firebase::DatabaseGetField"
-          },
-          "parameters": [
-            "\"Equations\"",
-            "\"1\"",
-            "Equation",
-            ""
-          ],
-          "subInstructions": []
-        },
-        {
-          "type": {
-            "inverted": false,
-            "value": "BBText::SetBBText"
-          },
-          "parameters": [
-            "QuestionBlockText",
-            "=",
-            "VariableString(Equation)"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "events": []
     }
   ],
   "layers": [
@@ -938,10 +993,6 @@
     }
   ],
   "behaviorsSharedData": [
-    {
-      "name": "LinkPathFinding",
-      "type": "LinkTools::LinkPathFinding"
-    },
     {
       "name": "Sticker",
       "type": "Sticker::Sticker"
