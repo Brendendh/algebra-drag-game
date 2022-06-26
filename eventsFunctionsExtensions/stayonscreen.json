@@ -47,30 +47,25 @@
               "actions": [
                 {
                   "type": {
-                    "inverted": false,
                     "value": "MettreX"
                   },
                   "parameters": [
                     "Object",
                     "=",
                     "min(max(Object.X(), CameraX(Object.Layer(), 0) - CameraWidth(Object.Layer(), 0)/2 + Object.Behavior::PropertyMarginLeft()), CameraX(Object.Layer(), 0) + CameraWidth(Object.Layer(), 0)/2 - Object.Width() - Object.Behavior::PropertyMarginRight())"
-                  ],
-                  "subInstructions": []
+                  ]
                 },
                 {
                   "type": {
-                    "inverted": false,
                     "value": "MettreY"
                   },
                   "parameters": [
                     "Object",
                     "=",
                     "min(max(Object.Y(), CameraY(Object.Layer(), 0) - CameraHeight(Object.Layer(), 0)/2+ Object.Behavior::PropertyMarginTop()), CameraY(Object.Layer(), 0) + CameraHeight(Object.Layer(), 0)/2 - Object.Height() - Object.Behavior::PropertyMarginBottom())"
-                  ],
-                  "subInstructions": []
+                  ]
                 }
-              ],
-              "events": []
+              ]
             }
           ],
           "parameters": [

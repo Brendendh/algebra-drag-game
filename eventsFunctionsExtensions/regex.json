@@ -156,7 +156,7 @@
           "inlineCode": "const re = new RegExp(eventsFunctionContext.getArgument(\"pattern\"), eventsFunctionContext.getArgument(\"flags\"));\r\n/** @type {string} */\r\nconst str = eventsFunctionContext.getArgument(\"string\");\r\nconst variable = runtimeScene.getVariables().get(eventsFunctionContext.getArgument(\"variable\"));\r\n\r\nvariable.fromJSObject(str.match(re) || []);\r\n",
           "parameterObjects": "",
           "useStrict": true,
-          "eventsSheetExpanded": false
+          "eventsSheetExpanded": true
         }
       ],
       "parameters": [
