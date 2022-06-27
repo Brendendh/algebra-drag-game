@@ -21,7 +21,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4391854326248168,
+    "zoomFactor": 0.5591854326248169,
     "windowMask": false
   },
   "objectsGroups": [
@@ -57,77 +57,45 @@
       "value": 1
     },
     {
-      "folded": true,
-      "name": "equation",
+      "name": "EquationLhs",
       "type": "structure",
+      "children": [
+        {
+          "name": "x0",
+          "type": "string",
+          "value": "2"
+        },
+        {
+          "name": "x1",
+          "type": "number",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "EquationRhs",
+      "type": "structure",
+      "children": [
+        {
+          "name": "x0",
+          "type": "string",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "name": "BlocksToIterate",
+      "type": "array",
       "children": []
+    },
+    {
+      "folded": true,
+      "name": "ChildID",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 65,
-      "layer": "",
-      "locked": false,
-      "name": "QuestionBlockObject",
-      "persistentUuid": "5694af9d-1dec-42a2-91fc-413a6a85e6d8",
-      "width": 160,
-      "x": 432,
-      "y": 190,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "locked": false,
-      "name": "QuestionBlockText",
-      "persistentUuid": "a79b6765-f60f-4aa3-839b-31f6abfa8411",
-      "width": 0,
-      "x": 445,
-      "y": 203,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 65,
-      "layer": "",
-      "locked": false,
-      "name": "ToolBlock",
-      "persistentUuid": "d56e5f70-9039-4881-bfaf-97072d8edace",
-      "width": 160,
-      "x": 433,
-      "y": 307,
-      "zOrder": 4,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "locked": false,
-      "name": "ToolBlockText",
-      "persistentUuid": "d1f51fed-4306-4fb7-a05c-8bacedcf503a",
-      "width": 0,
-      "x": 449,
-      "y": 324,
-      "zOrder": 6,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
     {
       "angle": 0,
       "customSize": false,
@@ -153,8 +121,8 @@
       "name": "RunButton",
       "persistentUuid": "5183e1c9-5ffa-45ad-beb5-8ccb3efa5f7e",
       "width": 74.79998779296875,
-      "x": 52.20001220703125,
-      "y": 448,
+      "x": 986.2000122070312,
+      "y": 126.83333587646484,
       "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
@@ -162,24 +130,107 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "height": 65,
+      "customSize": false,
+      "height": 0,
       "layer": "",
       "locked": false,
-      "name": "ToolBlockSpawner",
-      "persistentUuid": "6af0769f-1dab-4a08-aace-2c1a2513e9d2",
-      "width": 160,
-      "x": 54,
-      "y": 282,
-      "zOrder": 9,
+      "name": "QuestionBlockObject",
+      "persistentUuid": "69720a46-fb24-43be-8c01-6ec1968f6af1",
+      "width": 0,
+      "x": 420,
+      "y": 188,
+      "zOrder": 11,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "UI",
+      "persistentUuid": "284ba634-c355-45dc-bba8-f38789c3e10b",
+      "width": 0,
+      "x": 1832,
+      "y": 1011,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "ToolBlock",
+      "persistentUuid": "45094192-62db-4ef2-8414-9c8db4823264",
+      "width": 0,
+      "x": 72,
+      "y": 213,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "IsCopy",
+          "type": "boolean",
+          "value": true
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "QuestionBlockText",
+      "persistentUuid": "e5dcc5d8-c794-48a4-a133-e4eec186bc6c",
+      "width": 0,
+      "x": 438,
+      "y": 202,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "ToolBlock",
+      "persistentUuid": "5e52f726-a0bb-429a-9869-97fdac990c38",
+      "width": 0,
+      "x": 923,
+      "y": 510,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "ID",
+          "type": "number",
+          "value": 5
+        },
+        {
+          "folded": true,
+          "name": "IsCopy",
+          "type": "boolean",
+          "value": false
+        }
+      ]
     }
   ],
   "objects": [
     {
-      "assetStoreId": "",
       "name": "UI",
       "tags": "",
       "type": "PrimitiveDrawing::Drawer",
@@ -203,7 +254,6 @@
       "clearBetweenFrames": false
     },
     {
-      "assetStoreId": "",
       "name": "QuestionBlockObject",
       "tags": "",
       "type": "Sprite",
@@ -219,16 +269,16 @@
       ],
       "animations": [
         {
-          "name": "",
+          "name": "QuestionBlock",
           "useMultipleDirections": false,
           "directions": [
             {
               "looping": false,
-              "timeBetweenFrames": 0.08,
+              "timeBetweenFrames": 0.07999999821186066,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\QuestionBlock.png",
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\questionBlock.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -241,26 +291,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 90.81761169433594,
-                        "y": 238.87515258789062
-                      },
-                      {
-                        "x": 196.39308166503906,
-                        "y": 237.73992919921875
-                      },
-                      {
-                        "x": 192.9874267578125,
-                        "y": 270
-                      },
-                      {
-                        "x": 90.81761169433594,
-                        "y": 270
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -269,7 +300,6 @@
       ]
     },
     {
-      "assetStoreId": "",
       "name": "QuestionBlockText",
       "tags": "",
       "type": "BBText::BBText",
@@ -294,7 +324,6 @@
       }
     },
     {
-      "assetStoreId": "",
       "name": "ToolBlock",
       "tags": "",
       "type": "Sprite",
@@ -314,9 +343,15 @@
         },
         {
           "folded": true,
-          "name": "Layer",
-          "type": "string",
-          "value": "0"
+          "name": "ID",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "IsCopy",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [],
@@ -329,7 +364,7 @@
       ],
       "animations": [
         {
-          "name": "ToolBlock",
+          "name": "add",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -337,8 +372,8 @@
               "timeBetweenFrames": 0.07999999821186066,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ToolBlock-1.png",
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\addBlock.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -351,26 +386,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 82.8710708618164,
-                        "y": 0
-                      },
-                      {
-                        "x": 202.06918334960938,
-                        "y": 0
-                      },
-                      {
-                        "x": 198.6635284423828,
-                        "y": 31.2540283203125
-                      },
-                      {
-                        "x": 91.95282745361328,
-                        "y": 30.11880874633789
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -379,7 +395,6 @@
       ]
     },
     {
-      "assetStoreId": "",
       "bold": false,
       "italic": false,
       "name": "ToolBlockText",
@@ -406,7 +421,6 @@
       }
     },
     {
-      "assetStoreId": "",
       "bold": false,
       "italic": false,
       "name": "OutputText",
@@ -427,7 +441,6 @@
       }
     },
     {
-      "assetStoreId": "",
       "name": "RunButton",
       "tags": "",
       "type": "Sprite",
@@ -466,52 +479,6 @@
           ]
         }
       ]
-    },
-    {
-      "assetStoreId": "",
-      "name": "ToolBlockSpawner",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "button",
-          "type": "MouseHelper::button"
-        }
-      ],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "assets\\ToolBlock-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "events": [
@@ -525,20 +492,36 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "UI Setup, Block text",
+          "comment2": ""
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
+                "inverted": false,
                 "value": "DepartScene"
               },
               "parameters": [
                 ""
-              ]
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
             {
               "type": {
+                "inverted": false,
                 "value": "PrimitiveDrawing::Rectangle"
               },
               "parameters": [
@@ -547,10 +530,12 @@
                 "0",
                 "SceneWindowWidth()*0.2",
                 "SceneWindowHeight()"
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "Sticker::Sticker::Stick"
               },
               "parameters": [
@@ -558,10 +543,12 @@
                 "Sticker",
                 "QuestionBlockObject",
                 ""
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "Sticker::Sticker::Stick"
               },
               "parameters": [
@@ -569,20 +556,12 @@
                 "Sticker",
                 "ToolBlock",
                 ""
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
-                "value": "TextObject::String"
-              },
-              "parameters": [
-                "ToolBlockText",
-                "=",
-                "ToolBlock.VariableString(BlockType)+ToolBlock.VariableString(NumberInput)+ \"             \" + ToolBlock.VariableString(BlockType)+ToolBlock.VariableString(NumberInput)"
-              ]
-            },
-            {
-              "type": {
+                "inverted": false,
                 "value": "Firebase::FirestoreGetField"
               },
               "parameters": [
@@ -591,36 +570,56 @@
                 "\"1)\"",
                 "EquationString",
                 "EquationError"
-              ]
+              ],
+              "subInstructions": []
             }
-          ]
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Equation Conversion from string to structure",
+          "comment2": ""
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
+                "inverted": false,
                 "value": "VarSceneTxt"
               },
               "parameters": [
-                "Equation",
+                "EquationString",
                 "!=",
                 "\"test\""
-              ]
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
             {
               "type": {
+                "inverted": false,
                 "value": "BBText::SetBBText"
               },
               "parameters": [
                 "QuestionBlockText",
                 "=",
-                "VariableString(Equation)"
-              ]
+                "VariableString(EquationString)"
+              ],
+              "subInstructions": []
             }
-          ]
+          ],
+          "events": []
         }
       ],
       "parameters": []
@@ -630,7 +629,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Drag Check",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -640,94 +638,114 @@
           "conditions": [
             {
               "type": {
+                "inverted": false,
                 "value": "DraggableBehavior::Dragged"
               },
               "parameters": [
                 "QuestionBlockObject",
                 "Draggable"
-              ]
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
             {
               "type": {
+                "inverted": false,
                 "value": "ChangePlan"
               },
               "parameters": [
                 "QuestionBlockObject",
                 "=",
                 "3"
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "ChangePlan"
               },
               "parameters": [
                 "ToolBlock",
                 "=",
                 "1"
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "ChangePlan"
               },
               "parameters": [
                 "QuestionBlockText",
                 "=",
                 "4"
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "ChangePlan"
               },
               "parameters": [
                 "ToolBlockText",
                 "=",
                 "2"
-              ]
+              ],
+              "subInstructions": []
             }
           ],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
+              "type": "BuiltinCommonInstructions::ForEachChildVariable",
+              "iterableVariableName": "BlocksToIterate",
+              "valueIteratorVariableName": "ChildID",
+              "keyIteratorVariableName": "",
               "conditions": [
                 {
                   "type": {
+                    "inverted": false,
                     "value": "VarObjet"
                   },
                   "parameters": [
                     "ToolBlock",
-                    "Layer",
-                    ">",
-                    "0"
-                  ]
+                    "ID",
+                    "=",
+                    "Variable(ChildID)"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "MettreY"
-                  },
-                  "parameters": [
-                    "ToolBlock",
-                    "=",
-                    "QuestionBlockObject.Y()+58"
-                  ]
-                },
-                {
-                  "type": {
+                    "inverted": false,
                     "value": "MettreX"
                   },
                   "parameters": [
                     "ToolBlock",
                     "=",
                     "QuestionBlockObject.X()"
-                  ]
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MettreY"
+                  },
+                  "parameters": [
+                    "ToolBlock",
+                    "=",
+                    "QuestionBlockObject.Y()+65"
+                  ],
+                  "subInstructions": []
                 }
-              ]
+              ],
+              "events": []
             }
           ]
         },
@@ -736,87 +754,67 @@
           "conditions": [
             {
               "type": {
+                "inverted": false,
                 "value": "DraggableBehavior::Dragged"
               },
               "parameters": [
                 "ToolBlock",
                 "Draggable"
-              ]
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
             {
               "type": {
+                "inverted": false,
                 "value": "ChangePlan"
               },
               "parameters": [
                 "QuestionBlockText",
                 "=",
                 "2"
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "ChangePlan"
               },
               "parameters": [
                 "QuestionBlockObject",
                 "=",
                 "1"
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "ChangePlan"
               },
               "parameters": [
                 "ToolBlock",
                 "=",
                 "3"
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "ChangePlan"
               },
               "parameters": [
                 "ToolBlockText",
                 "=",
                 "4"
-              ]
+              ],
+              "subInstructions": []
             }
           ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "VarObjet"
-                  },
-                  "parameters": [
-                    "ToolBlock",
-                    "Layer",
-                    ">",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ModVarObjet"
-                  },
-                  "parameters": [
-                    "ToolBlock",
-                    "Layer",
-                    "=",
-                    "0"
-                  ]
-                }
-              ]
-            }
-          ]
+          "events": []
         }
       ],
       "parameters": []
@@ -835,12 +833,14 @@
           "conditions": [
             {
               "type": {
+                "inverted": false,
                 "value": "MouseButtonReleased"
               },
               "parameters": [
                 "",
                 "Left"
-              ]
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [],
@@ -851,6 +851,7 @@
               "conditions": [
                 {
                   "type": {
+                    "inverted": false,
                     "value": "CollisionNP"
                   },
                   "parameters": [
@@ -859,31 +860,48 @@
                     "",
                     "",
                     ""
-                  ]
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [
                 {
                   "type": {
+                    "inverted": false,
                     "value": "MettreX"
                   },
                   "parameters": [
                     "ToolBlock",
                     "=",
                     "QuestionBlockObject.X()"
-                  ]
+                  ],
+                  "subInstructions": []
                 },
                 {
                   "type": {
+                    "inverted": false,
                     "value": "MettreY"
                   },
                   "parameters": [
                     "ToolBlock",
                     "=",
-                    "QuestionBlockObject.Y()+58"
-                  ]
+                    "QuestionBlockObject.Y()+65"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "BlocksToIterate",
+                    "ToolBlock.Variable(ID)"
+                  ],
+                  "subInstructions": []
                 }
-              ]
+              ],
+              "events": []
             }
           ]
         }
@@ -895,7 +913,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Block Spawn",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -905,45 +922,98 @@
           "conditions": [
             {
               "type": {
-                "value": "SourisSurObjet"
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::And"
               },
-              "parameters": [
-                "ToolBlockSpawner",
-                "",
-                "",
-                ""
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "ToolBlock",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "ToolBlock",
+                    "IsCopy",
+                    "True"
+                  ],
+                  "subInstructions": []
+                }
               ]
             },
             {
               "type": {
+                "inverted": false,
                 "value": "MouseButtonPressed"
               },
               "parameters": [
                 "",
                 "Left"
-              ]
+              ],
+              "subInstructions": []
             },
             {
               "type": {
+                "inverted": false,
                 "value": "BuiltinCommonInstructions::Once"
               },
-              "parameters": []
+              "parameters": [],
+              "subInstructions": []
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "Create"
+                "inverted": false,
+                "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "",
                 "ToolBlock",
-                "ToolBlockSpawner.X()",
-                "ToolBlockSpawner.Y()",
-                ""
-              ]
+                "IsCopy",
+                "False"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "ToolBlock",
+                "ID",
+                "=",
+                "Variable(BlockIDCounter)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "BlockIDCounter",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
             }
-          ]
+          ],
+          "events": []
         }
       ],
       "parameters": []
@@ -977,10 +1047,6 @@
     {
       "name": "Sticker",
       "type": "Sticker::Sticker"
-    },
-    {
-      "name": "button",
-      "type": "MouseHelper::button"
     }
   ]
 }

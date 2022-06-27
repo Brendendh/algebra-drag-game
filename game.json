@@ -15,7 +15,6 @@
     "projectUuid": "52d65a29-354d-4118-9d7b-ffe00c48310e",
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
-    "templateSlug": "",
     "useExternalSourceFiles": false,
     "version": "1.0.0",
     "name": "DragAndDrop",
@@ -114,6 +113,33 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\RunButton-1-0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/QuestionBlock-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\QuestionBlock-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/addBlock.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\addBlock.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/questionBlock.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\questionBlock.png",
         "smoothed": true,
         "userAdded": true
       }
