@@ -42,39 +42,32 @@
               "conditions": [
                 {
                   "type": {
-                    "inverted": false,
                     "value": "DepartScene"
                   },
                   "parameters": [
                     ""
-                  ],
-                  "subInstructions": []
+                  ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "inverted": false,
                     "value": "CacheSouris"
                   },
                   "parameters": [
                     ""
-                  ],
-                  "subInstructions": []
+                  ]
                 },
                 {
                   "type": {
-                    "inverted": false,
                     "value": "Montre"
                   },
                   "parameters": [
                     "Object",
                     ""
-                  ],
-                  "subInstructions": []
+                  ]
                 }
-              ],
-              "events": []
+              ]
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -82,7 +75,6 @@
               "actions": [
                 {
                   "type": {
-                    "inverted": false,
                     "value": "MettreXY"
                   },
                   "parameters": [
@@ -91,11 +83,9 @@
                     "MouseX()",
                     "=",
                     "MouseY()"
-                  ],
-                  "subInstructions": []
+                  ]
                 }
-              ],
-              "events": []
+              ]
             }
           ],
           "parameters": [
@@ -137,27 +127,22 @@
               "actions": [
                 {
                   "type": {
-                    "inverted": false,
                     "value": "CacheSouris"
                   },
                   "parameters": [
                     ""
-                  ],
-                  "subInstructions": []
+                  ]
                 },
                 {
                   "type": {
-                    "inverted": false,
                     "value": "Montre"
                   },
                   "parameters": [
                     "Object",
                     ""
-                  ],
-                  "subInstructions": []
+                  ]
                 }
-              ],
-              "events": []
+              ]
             }
           ],
           "parameters": [
@@ -199,26 +184,21 @@
               "actions": [
                 {
                   "type": {
-                    "inverted": false,
                     "value": "MontreSouris"
                   },
                   "parameters": [
                     ""
-                  ],
-                  "subInstructions": []
+                  ]
                 },
                 {
                   "type": {
-                    "inverted": false,
                     "value": "Cache"
                   },
                   "parameters": [
                     "Object"
-                  ],
-                  "subInstructions": []
+                  ]
                 }
-              ],
-              "events": []
+              ]
             }
           ],
           "parameters": [
@@ -268,7 +248,6 @@
               "conditions": [
                 {
                   "type": {
-                    "inverted": false,
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
@@ -276,42 +255,34 @@
                     "",
                     "",
                     ""
-                  ],
-                  "subInstructions": []
+                  ]
                 },
                 {
                   "type": {
-                    "inverted": false,
                     "value": "MouseButtonPressed"
                   },
                   "parameters": [
                     "",
                     "Left"
-                  ],
-                  "subInstructions": []
+                  ]
                 },
                 {
                   "type": {
-                    "inverted": false,
                     "value": "BuiltinCommonInstructions::Once"
                   },
-                  "parameters": [],
-                  "subInstructions": []
+                  "parameters": []
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "inverted": false,
                     "value": "SetReturnBoolean"
                   },
                   "parameters": [
                     "True"
-                  ],
-                  "subInstructions": []
+                  ]
                 }
-              ],
-              "events": []
+              ]
             }
           ],
           "parameters": [

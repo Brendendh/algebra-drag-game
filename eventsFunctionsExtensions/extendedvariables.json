@@ -48,46 +48,38 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnBoolean"
               },
               "parameters": [
                 "False"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::GlobalVariableExist"
               },
               "parameters": [
                 "",
                 "GetArgumentAsString(\"GlobalVariableName\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
           ],
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnBoolean"
               },
               "parameters": [
                 "True"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -150,46 +142,38 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnBoolean"
               },
               "parameters": [
                 "False"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::SceneVariableExist"
               },
               "parameters": [
                 "",
                 "GetArgumentAsString(\"SceneVariableName\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
           ],
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnBoolean"
               },
               "parameters": [
                 "True"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -252,23 +236,19 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnBoolean"
               },
               "parameters": [
                 "False"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::ObjectVariableExist"
               },
               "parameters": [
@@ -276,23 +256,19 @@
                 "ObjectToCheck",
                 "GetArgumentAsString(\"ObjectVariableName\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
           ],
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnBoolean"
               },
               "parameters": [
                 "True"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -375,18 +351,15 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::DeleteGlobalVariable"
               },
               "parameters": [
                 "",
                 "GetArgumentAsString(\"GlobalVariableName\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -449,7 +422,6 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::ModifySceneVariableString"
               },
               "parameters": [
@@ -457,11 +429,9 @@
                 "GetArgumentAsString(\"SceneVariableName\")",
                 "GetArgumentAsNumber(\"SceneVariableValue\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -585,7 +555,6 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::ModifyGlobalVariable"
               },
               "parameters": [
@@ -593,11 +562,9 @@
                 "GetArgumentAsString(\"SceneVariableName\")",
                 "GetArgumentAsNumber(\"SceneVariableValue\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -639,7 +606,6 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::ModifyGlobalVariableString"
               },
               "parameters": [
@@ -647,11 +613,9 @@
                 "GetArgumentAsString(\"SceneVariableName\")",
                 "GetArgumentAsNumber(\"SceneVariableValue\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -734,7 +698,6 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::ModifySceneVariable"
               },
               "parameters": [
@@ -742,11 +705,9 @@
                 "GetArgumentAsString(\"SceneVariableName\")",
                 "GetArgumentAsNumber(\"SceneVariableValue\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -829,18 +790,15 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::DeleteSceneVariable"
               },
               "parameters": [
                 "",
                 "GetArgumentAsString(\"SceneVariableName\")",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -903,7 +861,6 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::CopyObjectVariable"
               },
               "parameters": [
@@ -914,11 +871,9 @@
                 "GetArgumentAsString(\"TargetVariableName\")",
                 "no",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
@@ -1051,7 +1006,6 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ExtendedVariables::CopyAllObjectVariables"
               },
               "parameters": [
@@ -1060,11 +1014,9 @@
                 "TargetObject",
                 "no",
                 ""
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [

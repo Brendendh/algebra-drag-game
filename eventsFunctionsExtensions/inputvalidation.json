@@ -258,18 +258,15 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ModVarSceneTxt"
               },
               "parameters": [
                 "__Sanitizer_tmpStr",
                 "=",
                 "GetArgumentAsString(\"text\")"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         },
         {
           "infiniteLoopWarning": true,
@@ -277,33 +274,28 @@
           "whileConditions": [
             {
               "type": {
-                "inverted": false,
                 "value": "Egal"
               },
               "parameters": [
                 "StrFind(VariableString(__Sanitizer_tmpStr), NewLine())",
                 "!=",
                 "-1"
-              ],
-              "subInstructions": []
+              ]
             }
           ],
           "conditions": [],
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "ModVarSceneTxt"
               },
               "parameters": [
                 "__Sanitizer_tmpStr",
                 "=",
                 "SubStr(VariableString(__Sanitizer_tmpStr), 0, StrFind(VariableString(__Sanitizer_tmpStr), NewLine())) + SubStr(VariableString(__Sanitizer_tmpStr), StrFind(VariableString(__Sanitizer_tmpStr), NewLine())+1, StrLength(VariableString(__Sanitizer_tmpStr)))"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -311,16 +303,13 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnString"
               },
               "parameters": [
                 "VariableString(__Sanitizer_tmpStr)"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [

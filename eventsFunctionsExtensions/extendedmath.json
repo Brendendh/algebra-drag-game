@@ -525,16 +525,13 @@
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnNumber"
               },
               "parameters": [
                 "1.618033988749894"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [],
@@ -559,8 +556,7 @@
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
-          "actions": [],
-          "events": []
+          "actions": []
         }
       ],
       "parameters": [],
@@ -758,8 +754,7 @@
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
-          "actions": [],
-          "events": []
+          "actions": []
         },
         {
           "type": "BuiltinCommonInstructions::JsCode",
@@ -805,8 +800,7 @@
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
-          "actions": [],
-          "events": []
+          "actions": []
         },
         {
           "type": "BuiltinCommonInstructions::JsCode",
@@ -854,30 +848,25 @@
           "conditions": [
             {
               "type": {
-                "inverted": false,
                 "value": "Egal"
               },
               "parameters": [
                 "mod(GetArgumentAsNumber(\"Value\"),2)",
                 "=",
                 "0"
-              ],
-              "subInstructions": []
+              ]
             }
           ],
           "actions": [
             {
               "type": {
-                "inverted": false,
                 "value": "SetReturnBoolean"
               },
               "parameters": [
                 "True"
-              ],
-              "subInstructions": []
+              ]
             }
-          ],
-          "events": []
+          ]
         }
       ],
       "parameters": [
