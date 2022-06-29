@@ -21,7 +21,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.5769410682590665,
+    "zoomFactor": 0.3850000000000001,
     "windowMask": false
   },
   "objectsGroups": [
@@ -124,6 +124,18 @@
       "name": "IterateOperator",
       "type": "string",
       "value": ""
+    },
+    {
+      "folded": true,
+      "name": "FirstCollisonTest",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "SecondCollisionTest",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
@@ -236,35 +248,6 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "ToolBlockObject",
-      "persistentUuid": "5e52f726-a0bb-429a-9869-97fdac990c38",
-      "width": 0,
-      "x": 1125,
-      "y": 460,
-      "zOrder": 15,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "folded": true,
-          "name": "ID",
-          "type": "number",
-          "value": 5
-        },
-        {
-          "folded": true,
-          "name": "IsCopy",
-          "type": "boolean",
-          "value": false
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "locked": false,
       "name": "BlockTextEntry",
       "persistentUuid": "ea2cb45b-94c7-45db-a5af-a8c1a892cbe3",
       "width": 0,
@@ -282,11 +265,11 @@
       "layer": "",
       "locked": false,
       "name": "ToolBlockCollision",
-      "persistentUuid": "558857b8-b5c9-4253-814d-920a8c212154",
+      "persistentUuid": "2ce54c62-b961-455e-a719-7531d2357ca9",
       "width": 0,
-      "x": 1125,
-      "y": 460,
-      "zOrder": 19,
+      "x": 67,
+      "y": 195,
+      "zOrder": 18,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -583,9 +566,40 @@
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "ID",
+          "type": "number",
+          "value": -1
+        },
+        {
+          "folded": true,
+          "name": "ConnectedUp",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "folded": true,
+          "name": "ConnectedDown",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "folded": true,
+          "name": "Selected",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Sticker",
+          "type": "Sticker::Sticker",
+          "OnlyFollowPosition": false
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -662,7 +676,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Beginning of the level",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -718,17 +731,6 @@
             },
             {
               "type": {
-                "value": "Sticker::Sticker::Stick"
-              },
-              "parameters": [
-                "ToolBlockText",
-                "Sticker",
-                "ToolBlockObject",
-                ""
-              ]
-            },
-            {
-              "type": {
                 "value": "Firebase::FirestoreGetField"
               },
               "parameters": [
@@ -755,6 +757,17 @@
               "parameters": [
                 "Copies.addBlock",
                 "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "Sticker::Sticker::Stick"
+              },
+              "parameters": [
+                "ToolBlockCollision",
+                "Sticker",
+                "ToolBlockObject",
+                ""
               ]
             }
           ]
@@ -1143,24 +1156,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "CollisionNP"
-                  },
-                  "parameters": [
-                    "ToolBlockObject",
-                    "ToolBlockObject",
-                    "",
-                    "",
-                    ""
-                  ]
-                }
-              ],
-              "actions": []
             }
           ]
         },
@@ -1260,6 +1255,12 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "ToolBlockCollision",
+          "conditions": [],
+          "actions": []
         }
       ],
       "parameters": []
@@ -1355,21 +1356,53 @@
             },
             {
               "type": {
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "BlockIDCounter",
-                "+",
-                "1"
-              ]
-            },
-            {
-              "type": {
                 "value": "SetSceneVariableAsBoolean"
               },
               "parameters": [
                 "Copies.addBlock",
                 "False"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "ToolBlockObject",
+                    "ToolBlockCollision",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "ToolBlockCollision",
+                    "ID",
+                    "=",
+                    "Variable(BlockIDCounter)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "BlockIDCounter",
+                    "+",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -1384,35 +1417,6 @@
               "parameters": [
                 "",
                 "Left"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::And"
-              },
-              "parameters": [],
-              "subInstructions": [
-                {
-                  "type": {
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "ToolBlockObject",
-                    "",
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "ToolBlockObject",
-                    "IsCopy",
-                    "False"
-                  ]
-                }
               ]
             },
             {
@@ -1438,6 +1442,18 @@
               },
               "parameters": [
                 "",
+                "ToolBlockCollision",
+                "65",
+                "195",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
                 "ToolBlockObject",
                 "65",
                 "195",
@@ -1453,6 +1469,39 @@
                 "True"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "ToolBlockObject",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "ToolBlockObject",
+                    "ToolBlockCollision",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Sticker::Sticker::Stick"
+                  },
+                  "parameters": [
+                    "ToolBlockCollision",
+                    "Sticker",
+                    "ToolBlockObject",
+                    ""
+                  ]
+                }
+              ]
+            }
           ]
         }
       ],
@@ -1463,6 +1512,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Block Iteration",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
