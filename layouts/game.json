@@ -21,7 +21,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.5600000000000003,
+    "zoomFactor": 0.43500000000000016,
     "windowMask": false
   },
   "objectsGroups": [
@@ -120,9 +120,8 @@
       "children": []
     },
     {
-      "folded": true,
       "name": "ArrayOfBlocks",
-      "type": "structure",
+      "type": "array",
       "children": []
     },
     {
@@ -140,6 +139,24 @@
     {
       "folded": true,
       "name": "CollisionTest",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "ArrayForBlocks",
+      "type": "array",
+      "children": []
+    },
+    {
+      "folded": true,
+      "name": "PrevChild",
+      "type": "number",
+      "value": -1
+    },
+    {
+      "folded": true,
+      "name": "DeletionID",
       "type": "number",
       "value": 0
     }
@@ -218,7 +235,7 @@
       "name": "ToolBlockObject",
       "persistentUuid": "45094192-62db-4ef2-8414-9c8db4823264",
       "width": 0,
-      "x": 65,
+      "x": 67,
       "y": 195,
       "zOrder": 13,
       "numberProperties": [],
@@ -857,6 +874,16 @@
                 "ToolBlockObject",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "ArrayCounter",
+                "=",
+                "0"
+              ]
             }
           ]
         },
@@ -989,48 +1016,56 @@
               "iterableVariableName": "BlocksToIterate",
               "valueIteratorVariableName": "ChildID",
               "keyIteratorVariableName": "",
-              "conditions": [
+              "conditions": [],
+              "actions": [],
+              "events": [
                 {
-                  "type": {
-                    "value": "VarObjet"
-                  },
-                  "parameters": [
-                    "ToolBlockObject",
-                    "ID",
-                    "=",
-                    "Variable(ChildID)"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "MettreX"
-                  },
-                  "parameters": [
-                    "ToolBlockObject",
-                    "=",
-                    "QuestionBlockObject.X()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "MettreY"
-                  },
-                  "parameters": [
-                    "ToolBlockObject",
-                    "=",
-                    "QuestionBlockObject.Y()+65*Variable(BlockYUpdater)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "BlockYUpdater",
-                    "+",
-                    "1"
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "ToolBlockObject",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "ToolBlockObject",
+                        "BlockID",
+                        "=",
+                        "Variable(ChildID)"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "ToolBlockObject",
+                        "=",
+                        "QuestionBlockObject.X()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "ToolBlockObject",
+                        "=",
+                        "QuestionBlockObject.Y()+65*Variable(BlockYUpdater)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "BlockYUpdater",
+                        "+",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -1107,6 +1142,135 @@
                 "4"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "PrevChild",
+                    "=",
+                    "-2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEachChildVariable",
+              "iterableVariableName": "ArrayOfBlocks",
+              "valueIteratorVariableName": "ChildID",
+              "keyIteratorVariableName": "",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEachChildVariable",
+                  "iterableVariableName": "ChildID",
+                  "valueIteratorVariableName": "ChildID2",
+                  "keyIteratorVariableName": "",
+                  "conditions": [],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "BlockDownCollision",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "BlockDownCollision",
+                            "ID",
+                            "=",
+                            "Variable(PrevChild)"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::ForEach",
+                          "object": "ToolBlockObject",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "VarObjet"
+                              },
+                              "parameters": [
+                                "ToolBlockObject",
+                                "BlockID",
+                                "=",
+                                "Variable(ChildID2)"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "MettreY"
+                              },
+                              "parameters": [
+                                "ToolBlockObject",
+                                "=",
+                                "BlockDownCollision.Y()+65"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "MettreX"
+                              },
+                              "parameters": [
+                                "ToolBlockObject",
+                                "=",
+                                "BlockDownCollision.X()"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "PrevChild",
+                            "=",
+                            "Variable(ChildID2)"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "PrevChild",
+                    "=",
+                    "-2"
+                  ]
+                }
+              ]
+            }
           ]
         }
       ],
@@ -1171,27 +1335,48 @@
                   "iterableVariableName": "BlocksToIterate",
                   "valueIteratorVariableName": "ChildID",
                   "keyIteratorVariableName": "ChildIDName",
-                  "conditions": [
+                  "conditions": [],
+                  "actions": [],
+                  "events": [
                     {
-                      "type": {
-                        "value": "VarObjet"
-                      },
-                      "parameters": [
-                        "ToolBlockObject",
-                        "ID",
-                        "=",
-                        "Variable(ChildID)"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SceneVariableRemoveAt"
-                      },
-                      "parameters": [
-                        "BlocksToIterate",
-                        "Variable(ChildIDName)"
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "ToolBlockObject",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "ToolBlockObject",
+                            "BlockID",
+                            "=",
+                            "Variable(ChildID)"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "ToolBlockObject",
+                            "QuestionBlockObject",
+                            "",
+                            "",
+                            "no"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SceneVariableRemoveAt"
+                          },
+                          "parameters": [
+                            "BlocksToIterate",
+                            "Variable(ChildIDName)"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -1250,7 +1435,7 @@
                       },
                       "parameters": [
                         "BlocksToIterate",
-                        "ToolBlockObject.Variable(ID)"
+                        "ToolBlockObject.Variable(BlockID)"
                       ]
                     },
                     {
@@ -1376,7 +1561,7 @@
                       },
                       "parameters": [
                         "BlocksToIterate",
-                        "ToolBlockObject.Variable(ID)"
+                        "ToolBlockObject.Variable(BlockID)"
                       ]
                     },
                     {
@@ -1472,6 +1657,42 @@
                         "value": "BuiltinCommonInstructions::CompareNumbers"
                       },
                       "parameters": [
+                        "ToolBlockObject.Variable(BlockID)",
+                        "=",
+                        "BlockDownCollision.Variable(ID)"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SceneVariablePush"
+                      },
+                      "parameters": [
+                        "ArrayOfBlocks",
+                        "ArrayForBlocks"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneVariablePushNumber"
+                      },
+                      "parameters": [
+                        "ArrayOfBlocks.0",
+                        "ToolBlockObject.Variable(BlockID)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "ToolBlockObject",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
                         "Variable(CollisionTest)",
                         "=",
                         "ToolBlockObject.Variable(BlockID)"
@@ -1501,12 +1722,11 @@
                     },
                     {
                       "type": {
-                        "value": "TextObject::String"
+                        "value": "SceneVariablePushNumber"
                       },
                       "parameters": [
-                        "OutputText",
-                        "=",
-                        "\"yes\""
+                        "ArrayOfBlocks.0",
+                        "ToolBlockObject.Variable(BlockID)"
                       ]
                     }
                   ]
@@ -1899,7 +2119,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Block Selected",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2022,6 +2241,133 @@
                 "BlockTextEntry",
                 "=",
                 "\"\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Block Deletion",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "ToolBlockObject",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "ToolBlockObject",
+                "<",
+                "ScreenWidth()*0.2"
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "ToolBlockObject",
+                "IsCopy",
+                "="
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "DraggableBehavior::Dragged"
+              },
+              "parameters": [
+                "ToolBlockObject",
+                "Draggable"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "DeletionID",
+                "=",
+                "ToolBlockObject.Variable(BlockID)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "ToolBlockObject",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "BlockUpCollision",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "BlockUpCollision",
+                    "ID",
+                    "=",
+                    "Variable(DeletionID)"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "BlockUpCollision",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "BlockDownCollision",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "BlockDownCollision",
+                    "ID",
+                    "=",
+                    "Variable(DeletionID)"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "BlockDownCollision",
+                    ""
+                  ]
+                }
               ]
             }
           ]
