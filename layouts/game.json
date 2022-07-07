@@ -57,14 +57,13 @@
       "value": 1
     },
     {
-      "folded": true,
       "name": "InputEquationLHS",
       "type": "structure",
       "children": [
         {
           "name": "x0",
-          "type": "string",
-          "value": "2"
+          "type": "number",
+          "value": 2
         },
         {
           "name": "x1",
@@ -74,14 +73,13 @@
       ]
     },
     {
-      "folded": true,
       "name": "InputEquationRHS",
       "type": "structure",
       "children": [
         {
           "name": "x0",
-          "type": "string",
-          "value": "4"
+          "type": "number",
+          "value": 4
         }
       ]
     },
@@ -159,6 +157,12 @@
       "name": "DeletionID",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "DraggedBlockID",
+      "type": "number",
+      "value": -2
     }
   ],
   "instances": [
@@ -171,25 +175,9 @@
       "name": "OutputText",
       "persistentUuid": "01ebf631-8265-4237-817c-b7b474f48d7c",
       "width": 0,
-      "x": 652,
-      "y": 75,
+      "x": 1691,
+      "y": 103,
       "zOrder": 7,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 31.166662216186523,
-      "layer": "",
-      "locked": false,
-      "name": "RunButton",
-      "persistentUuid": "5183e1c9-5ffa-45ad-beb5-8ccb3efa5f7e",
-      "width": 74.79998779296875,
-      "x": 986.2000122070312,
-      "y": 126.83333587646484,
-      "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1141,8 +1129,33 @@
                 "=",
                 "4"
               ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "DraggedBlockID",
+                "=",
+                "ToolBlockObject.Variable(BlockID)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonPressed"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
             }
           ],
+          "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -1158,77 +1171,95 @@
                     "-2"
                   ]
                 }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::ForEachChildVariable",
-              "iterableVariableName": "ArrayOfBlocks",
-              "valueIteratorVariableName": "ChildID",
-              "keyIteratorVariableName": "",
-              "conditions": [],
-              "actions": [],
+              ],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::ForEachChildVariable",
-                  "iterableVariableName": "ChildID",
-                  "valueIteratorVariableName": "ChildID2",
+                  "iterableVariableName": "ArrayOfBlocks",
+                  "valueIteratorVariableName": "ChildID",
                   "keyIteratorVariableName": "",
                   "conditions": [],
                   "actions": [],
                   "events": [
                     {
-                      "type": "BuiltinCommonInstructions::ForEach",
-                      "object": "BlockDownCollision",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "VarObjet"
-                          },
-                          "parameters": [
-                            "BlockDownCollision",
-                            "ID",
-                            "=",
-                            "Variable(PrevChild)"
-                          ]
-                        }
-                      ],
+                      "type": "BuiltinCommonInstructions::ForEachChildVariable",
+                      "iterableVariableName": "ChildID",
+                      "valueIteratorVariableName": "ChildID2",
+                      "keyIteratorVariableName": "",
+                      "conditions": [],
                       "actions": [],
                       "events": [
                         {
                           "type": "BuiltinCommonInstructions::ForEach",
-                          "object": "ToolBlockObject",
+                          "object": "BlockDownCollision",
                           "conditions": [
                             {
                               "type": {
                                 "value": "VarObjet"
                               },
                               "parameters": [
-                                "ToolBlockObject",
-                                "BlockID",
+                                "BlockDownCollision",
+                                "ID",
                                 "=",
-                                "Variable(ChildID2)"
+                                "Variable(PrevChild)"
                               ]
                             }
                           ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::ForEach",
+                              "object": "ToolBlockObject",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "ToolBlockObject",
+                                    "BlockID",
+                                    "=",
+                                    "Variable(ChildID2)"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "MettreY"
+                                  },
+                                  "parameters": [
+                                    "ToolBlockObject",
+                                    "=",
+                                    "BlockDownCollision.Y()+65"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "MettreX"
+                                  },
+                                  "parameters": [
+                                    "ToolBlockObject",
+                                    "=",
+                                    "BlockDownCollision.X()"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
                           "actions": [
                             {
                               "type": {
-                                "value": "MettreY"
+                                "value": "ModVarScene"
                               },
                               "parameters": [
-                                "ToolBlockObject",
+                                "PrevChild",
                                 "=",
-                                "BlockDownCollision.Y()+65"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "MettreX"
-                              },
-                              "parameters": [
-                                "ToolBlockObject",
-                                "=",
-                                "BlockDownCollision.X()"
+                                "Variable(ChildID2)"
                               ]
                             }
                           ]
@@ -1246,27 +1277,11 @@
                           "parameters": [
                             "PrevChild",
                             "=",
-                            "Variable(ChildID2)"
+                            "-2"
                           ]
                         }
                       ]
                     }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "PrevChild",
-                    "=",
-                    "-2"
                   ]
                 }
               ]
