@@ -163,6 +163,12 @@
       "name": "DraggedBlockID",
       "type": "number",
       "value": -2
+    },
+    {
+      "folded": true,
+      "name": "BlockDragged",
+      "type": "boolean",
+      "value": false
     }
   ],
   "instances": [
@@ -223,8 +229,8 @@
       "name": "ToolBlockObject",
       "persistentUuid": "45094192-62db-4ef2-8414-9c8db4823264",
       "width": 0,
-      "x": 67,
-      "y": 195,
+      "x": 82,
+      "y": 68,
       "zOrder": 13,
       "numberProperties": [],
       "stringProperties": [],
@@ -278,8 +284,8 @@
       "name": "BlockUpCollision",
       "persistentUuid": "2ce54c62-b961-455e-a719-7531d2357ca9",
       "width": 0,
-      "x": 67,
-      "y": 195,
+      "x": 82,
+      "y": 68,
       "zOrder": 18,
       "numberProperties": [],
       "stringProperties": [],
@@ -294,8 +300,8 @@
       "name": "BlockDownCollision",
       "persistentUuid": "722f4836-ee72-42de-beaa-693ce926c714",
       "width": 0,
-      "x": 67,
-      "y": 195,
+      "x": 82,
+      "y": 68,
       "zOrder": 19,
       "numberProperties": [],
       "stringProperties": [],
@@ -453,9 +459,9 @@
       "effects": [],
       "behaviors": [
         {
+          "checkCollisionMask": true,
           "name": "Draggable",
-          "type": "DraggableBehavior::Draggable",
-          "checkCollisionMask": false
+          "type": "DraggableBehavior::Draggable"
         }
       ],
       "animations": [
@@ -928,6 +934,7 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1081,6 +1088,32 @@
           "conditions": [
             {
               "type": {
+                "inverted": true,
+                "value": "DraggableBehavior::Dragged"
+              },
+              "parameters": [
+                "ToolBlockObject",
+                "Draggable"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "BlockDragged",
+                "False"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "DraggableBehavior::Dragged"
               },
               "parameters": [
@@ -1139,6 +1172,15 @@
                 "=",
                 "ToolBlockObject.Variable(BlockID)"
               ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "BlockDragged",
+                "True"
+              ]
             }
           ]
         },
@@ -1147,11 +1189,11 @@
           "conditions": [
             {
               "type": {
-                "value": "MouseButtonPressed"
+                "value": "SceneVariableAsBoolean"
               },
               "parameters": [
-                "",
-                "Left"
+                "BlockDragged",
+                "True"
               ]
             }
           ],
@@ -1314,6 +1356,7 @@
           "comment2": ""
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1763,6 +1806,7 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1918,6 +1962,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1953,8 +1998,8 @@
               "parameters": [
                 "",
                 "BlockUpCollision",
-                "65",
-                "195",
+                "82",
+                "68",
                 ""
               ]
             },
@@ -1965,8 +2010,8 @@
               "parameters": [
                 "",
                 "BlockDownCollision",
-                "65",
-                "195",
+                "82",
+                "68",
                 ""
               ]
             },
@@ -1977,8 +2022,8 @@
               "parameters": [
                 "",
                 "ToolBlockObject",
-                "65",
-                "195",
+                "82",
+                "68",
                 ""
               ]
             },
@@ -2082,6 +2127,7 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -2273,6 +2319,7 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::ForEach",
           "object": "ToolBlockObject",
           "conditions": [
