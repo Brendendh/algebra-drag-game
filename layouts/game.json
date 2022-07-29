@@ -197,8 +197,8 @@
       "name": "QuestionBlockObject",
       "persistentUuid": "69720a46-fb24-43be-8c01-6ec1968f6af1",
       "width": 0,
-      "x": 741,
-      "y": 262,
+      "x": 463,
+      "y": 74,
       "zOrder": 11,
       "numberProperties": [],
       "stringProperties": [],
@@ -252,8 +252,8 @@
       "name": "QuestionBlockText",
       "persistentUuid": "e5dcc5d8-c794-48a4-a133-e4eec186bc6c",
       "width": 0,
-      "x": 759,
-      "y": 276,
+      "x": 481,
+      "y": 88,
       "zOrder": 14,
       "numberProperties": [],
       "stringProperties": [],
@@ -459,9 +459,9 @@
       "effects": [],
       "behaviors": [
         {
-          "checkCollisionMask": true,
           "name": "Draggable",
-          "type": "DraggableBehavior::Draggable"
+          "type": "DraggableBehavior::Draggable",
+          "checkCollisionMask": true
         }
       ],
       "animations": [
@@ -1806,7 +1806,6 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1835,16 +1834,16 @@
                     "IsCopy",
                     "True"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "DraggableBehavior::Dragged"
+                  },
+                  "parameters": [
+                    "ToolBlockObject",
+                    "Draggable"
+                  ]
                 }
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
               ]
             },
             {
@@ -1962,7 +1961,6 @@
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -2330,7 +2328,7 @@
               "parameters": [
                 "ToolBlockObject",
                 "<",
-                "ScreenWidth()*0.2"
+                "ScreenWidth()*0.2 + 105"
               ]
             },
             {
