@@ -21,7 +21,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.43500000000000016,
+    "zoomFactor": 0.3600000000000001,
     "windowMask": false
   },
   "objectsGroups": [
@@ -175,6 +175,24 @@
       "name": "DragFinished",
       "type": "boolean",
       "value": false
+    },
+    {
+      "folded": true,
+      "name": "ArrayIDCounter",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "IterationBeforeStop",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "folded": true,
+      "name": "IterationBerforeStopCounter",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
@@ -203,8 +221,8 @@
       "name": "QuestionBlockObject",
       "persistentUuid": "69720a46-fb24-43be-8c01-6ec1968f6af1",
       "width": 0,
-      "x": 463,
-      "y": 74,
+      "x": 545,
+      "y": 63,
       "zOrder": 11,
       "numberProperties": [],
       "stringProperties": [],
@@ -258,8 +276,8 @@
       "name": "QuestionBlockText",
       "persistentUuid": "e5dcc5d8-c794-48a4-a133-e4eec186bc6c",
       "width": 0,
-      "x": 481,
-      "y": 88,
+      "x": 563,
+      "y": 77,
       "zOrder": 14,
       "numberProperties": [],
       "stringProperties": [],
@@ -354,13 +372,7 @@
         }
       ],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "Draggable",
-          "type": "DraggableBehavior::Draggable",
-          "checkCollisionMask": false
-        }
-      ],
+      "behaviors": [],
       "animations": [
         {
           "name": "QuestionBlock",
@@ -884,6 +896,22 @@
                 "=",
                 "0"
               ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "BlockDownCollision"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "BlockUpCollision"
+              ]
             }
           ]
         },
@@ -1094,6 +1122,250 @@
           "conditions": [
             {
               "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "BlockDragged",
+                "True"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "PrevChild",
+                    "=",
+                    "-2"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEachChildVariable",
+                  "iterableVariableName": "ArrayOfBlocks",
+                  "valueIteratorVariableName": "ArrayID",
+                  "keyIteratorVariableName": "",
+                  "conditions": [],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::ForEachChildVariable",
+                      "iterableVariableName": "ArrayID",
+                      "valueIteratorVariableName": "ArrayBlockID",
+                      "keyIteratorVariableName": "",
+                      "conditions": [],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "VarScene"
+                              },
+                              "parameters": [
+                                "PrevChild",
+                                "=",
+                                "-2"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::ForEach",
+                              "object": "BlockDownCollision",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "BlockDownCollision",
+                                    "ID",
+                                    "=",
+                                    "Variable(PrevChild)"
+                                  ]
+                                }
+                              ],
+                              "actions": [],
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::ForEach",
+                                  "object": "ToolBlockObject",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "VarObjet"
+                                      },
+                                      "parameters": [
+                                        "ToolBlockObject",
+                                        "BlockID",
+                                        "=",
+                                        "Variable(ArrayBlockID)"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "MettreY"
+                                      },
+                                      "parameters": [
+                                        "ToolBlockObject",
+                                        "=",
+                                        "BlockDownCollision.Y()+65"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "MettreX"
+                                      },
+                                      "parameters": [
+                                        "ToolBlockObject",
+                                        "=",
+                                        "BlockDownCollision.X()"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ModVarScene"
+                              },
+                              "parameters": [
+                                "PrevChild",
+                                "=",
+                                "Variable(ArrayBlockID)"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "PrevChild",
+                            "=",
+                            "-2"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "DragFinished",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "IterationBerforeStop",
+                    "True"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "IterationBeforeStop",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "IterationBerforeStopCounter",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "IterationBerforeStopCounter",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "BlockDragged",
+                    "False"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "inverted": true,
                 "value": "DraggableBehavior::Dragged"
               },
@@ -1109,26 +1381,35 @@
                 "value": "SetSceneVariableAsBoolean"
               },
               "parameters": [
-                "BlockDragged",
+                "DragFinished",
                 "True"
               ]
-            },
+            }
+          ],
+          "events": [
             {
-              "type": {
-                "value": "ChangeColor"
-              },
-              "parameters": [
-                "ToolBlockObject",
-                "\"10;10;10\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetSceneVariableAsBoolean"
-              },
-              "parameters": [
-                "DragFinished",
-                "False"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DraggableBehavior::Dragged"
+                  },
+                  "parameters": [
+                    "ToolBlockObject",
+                    "Draggable"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "DragFinished",
+                    "False"
+                  ]
+                }
               ]
             }
           ]
@@ -1202,187 +1483,36 @@
                 "value": "SetSceneVariableAsBoolean"
               },
               "parameters": [
-                "BlockDragged",
-                "True"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SceneVariableAsBoolean"
-              },
-              "parameters": [
-                "BlockDragged",
-                "True"
-              ]
-            },
-            {
-              "type": {
-                "value": "SceneVariableAsBoolean"
-              },
-              "parameters": [
                 "DragFinished",
-                "="
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "PrevChild",
-                    "=",
-                    "-2"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::ForEachChildVariable",
-                  "iterableVariableName": "ArrayOfBlocks",
-                  "valueIteratorVariableName": "ChildID",
-                  "keyIteratorVariableName": "",
-                  "conditions": [],
-                  "actions": [],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::ForEachChildVariable",
-                      "iterableVariableName": "ChildID",
-                      "valueIteratorVariableName": "ChildID2",
-                      "keyIteratorVariableName": "",
-                      "conditions": [],
-                      "actions": [],
-                      "events": [
-                        {
-                          "type": "BuiltinCommonInstructions::ForEach",
-                          "object": "BlockDownCollision",
-                          "conditions": [
-                            {
-                              "type": {
-                                "value": "VarObjet"
-                              },
-                              "parameters": [
-                                "BlockDownCollision",
-                                "ID",
-                                "=",
-                                "Variable(PrevChild)"
-                              ]
-                            }
-                          ],
-                          "actions": [],
-                          "events": [
-                            {
-                              "type": "BuiltinCommonInstructions::ForEach",
-                              "object": "ToolBlockObject",
-                              "conditions": [
-                                {
-                                  "type": {
-                                    "value": "VarObjet"
-                                  },
-                                  "parameters": [
-                                    "ToolBlockObject",
-                                    "BlockID",
-                                    "=",
-                                    "Variable(ChildID2)"
-                                  ]
-                                }
-                              ],
-                              "actions": [
-                                {
-                                  "type": {
-                                    "value": "MettreY"
-                                  },
-                                  "parameters": [
-                                    "ToolBlockObject",
-                                    "=",
-                                    "BlockDownCollision.Y()+65"
-                                  ]
-                                },
-                                {
-                                  "type": {
-                                    "value": "MettreX"
-                                  },
-                                  "parameters": [
-                                    "ToolBlockObject",
-                                    "=",
-                                    "BlockDownCollision.X()"
-                                  ]
-                                },
-                                {
-                                  "type": {
-                                    "value": "ChangeColor"
-                                  },
-                                  "parameters": [
-                                    "ToolBlockObject",
-                                    "\"100;100;100\""
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "ModVarScene"
-                              },
-                              "parameters": [
-                                "PrevChild",
-                                "=",
-                                "Variable(ChildID2)"
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "ModVarScene"
-                          },
-                          "parameters": [
-                            "PrevChild",
-                            "=",
-                            "-2"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
+                "False"
               ]
             },
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetSceneVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "DragFinished",
-                    "True"
-                  ]
-                }
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "BlockDragged",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "IterationBerforeStop",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "IterationBerforeStopCounter",
+                "=",
+                "0"
               ]
             }
           ]
@@ -1395,7 +1525,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "name": "Block Collision",
+      "name": "Question Block Collision",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -1413,7 +1543,6 @@
           "comment2": ""
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1429,6 +1558,7 @@
           "actions": [],
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -1606,6 +1736,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -1793,7 +1924,7 @@
                         "value": "SceneVariablePushNumber"
                       },
                       "parameters": [
-                        "ArrayOfBlocks.0",
+                        "ArrayOfBlocks[Variable(ArrayIDCounter)]",
                         "ToolBlockObject.Variable(BlockID)"
                       ]
                     }
@@ -1840,8 +1971,24 @@
                         "value": "SceneVariablePushNumber"
                       },
                       "parameters": [
-                        "ArrayOfBlocks.0",
+                        "ArrayOfBlocks[Variable(ArrayIDCounter)]",
                         "ToolBlockObject.Variable(BlockID)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "ArrayIDCounter",
+                        "+",
+                        "1"
                       ]
                     }
                   ]
@@ -1863,6 +2010,7 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -2018,6 +2166,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -2089,6 +2238,22 @@
               "parameters": [
                 "Copies.addBlock",
                 "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "BlockUpCollision"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "BlockDownCollision"
               ]
             }
           ],
@@ -2177,6 +2342,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Block Iteration",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2235,6 +2401,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Block Selected",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2406,6 +2573,15 @@
               "parameters": [
                 "ToolBlockObject",
                 "Draggable"
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "DragFinished",
+                "True"
               ]
             }
           ],
