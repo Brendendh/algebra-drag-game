@@ -169,6 +169,12 @@
       "name": "BlockDragged",
       "type": "boolean",
       "value": false
+    },
+    {
+      "folded": true,
+      "name": "DragFinished",
+      "type": "boolean",
+      "value": false
     }
   ],
   "instances": [
@@ -1104,6 +1110,24 @@
               },
               "parameters": [
                 "BlockDragged",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "ToolBlockObject",
+                "\"10;10;10\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "DragFinished",
                 "False"
               ]
             }
@@ -1195,6 +1219,15 @@
                 "BlockDragged",
                 "True"
               ]
+            },
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "DragFinished",
+                "="
+              ]
             }
           ],
           "actions": [],
@@ -1285,6 +1318,15 @@
                                     "=",
                                     "BlockDownCollision.X()"
                                   ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ChangeColor"
+                                  },
+                                  "parameters": [
+                                    "ToolBlockObject",
+                                    "\"100;100;100\""
+                                  ]
                                 }
                               ]
                             }
@@ -1324,6 +1366,21 @@
                         }
                       ]
                     }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "DragFinished",
+                    "True"
                   ]
                 }
               ]
