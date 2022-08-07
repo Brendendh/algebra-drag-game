@@ -14,13 +14,13 @@
     "pixelsRounding": false,
     "projectUuid": "52d65a29-354d-4118-9d7b-ffe00c48310e",
     "scaleMode": "linear",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "",
     "templateSlug": "",
     "useExternalSourceFiles": false,
     "version": "1.0.0",
     "name": "DragAndDrop",
     "description": "",
-    "author": "",
+    "author": "CoreDH",
     "windowWidth": 1920,
     "windowHeight": 1080,
     "latestCompilationDirectory": "C:\\Users\\Brenden\\Documents\\GDevelop projects",
@@ -159,6 +159,24 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\ToolBlockAssets-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/ToolBlockAssets-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ToolBlockAssets-1-0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/ToolBlockAssets-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ToolBlockAssets-1-1.png",
         "smoothed": true,
         "userAdded": true
       }

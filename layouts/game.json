@@ -21,7 +21,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.3600000000000001,
+    "zoomFactor": 0.5800000000000001,
     "windowMask": false
   },
   "objectsGroups": [
@@ -202,27 +202,11 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "OutputText",
-      "persistentUuid": "01ebf631-8265-4237-817c-b7b474f48d7c",
-      "width": 0,
-      "x": 1691,
-      "y": 103,
-      "zOrder": 7,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "locked": false,
       "name": "QuestionBlockObject",
       "persistentUuid": "69720a46-fb24-43be-8c01-6ec1968f6af1",
       "width": 0,
-      "x": 545,
-      "y": 63,
+      "x": 464,
+      "y": 61,
       "zOrder": 11,
       "numberProperties": [],
       "stringProperties": [],
@@ -276,8 +260,8 @@
       "name": "QuestionBlockText",
       "persistentUuid": "e5dcc5d8-c794-48a4-a133-e4eec186bc6c",
       "width": 0,
-      "x": 563,
-      "y": 77,
+      "x": 482,
+      "y": 75,
       "zOrder": 14,
       "numberProperties": [],
       "stringProperties": [],
@@ -656,7 +640,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ToolBlockAssets.png",
+                  "image": "assets\\ToolBlockAssets-1-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -672,20 +656,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 20,
+                        "x": 16,
                         "y": 0
                       },
                       {
-                        "x": 55,
+                        "x": 59,
                         "y": 0
                       },
                       {
-                        "x": 55,
-                        "y": 13
+                        "x": 59,
+                        "y": 17
                       },
                       {
-                        "x": 20,
-                        "y": 13
+                        "x": 16,
+                        "y": 17
                       }
                     ]
                   ]
@@ -735,7 +719,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ToolBlockAssets-1.png",
+                  "image": "assets\\ToolBlockAssets-1-0.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -751,19 +735,19 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 20.399999618530273,
-                        "y": 59.150001525878906
+                        "x": 16,
+                        "y": 55
                       },
                       {
-                        "x": 54.79999923706055,
-                        "y": 59.150001525878906
+                        "x": 59,
+                        "y": 55
                       },
                       {
-                        "x": 54.599998474121094,
+                        "x": 59,
                         "y": 72
                       },
                       {
-                        "x": 20.5,
+                        "x": 16,
                         "y": 72
                       }
                     ]
@@ -820,7 +804,7 @@
                 "UI",
                 "0",
                 "0",
-                "SceneWindowWidth()*0.2",
+                "SceneWindowWidth()*0.175",
                 "SceneWindowHeight()"
               ]
             },
@@ -1133,7 +1117,19 @@
           "actions": [],
           "events": [
             {
-              "folded": true,
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Check for every linked blocks and change their positions depending on it",
+              "comment2": ""
+            },
+            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -1282,6 +1278,19 @@
               ]
             },
             {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Check if dragging is finished",
+              "comment2": ""
+            },
+            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -1305,6 +1314,19 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Check position 5 more times before stopping the movement",
+              "comment2": ""
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -1825,6 +1847,19 @@
               ]
             },
             {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Checks every block collisions to see if they are touching each other",
+              "comment2": ""
+            },
+            {
               "type": "BuiltinCommonInstructions::ForEach",
               "object": "BlockUpCollision",
               "conditions": [
@@ -1895,6 +1930,19 @@
               ],
               "events": [
                 {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Checks for every block if it has the same ID and makes a linked list with the block",
+                  "comment2": ""
+                },
+                {
                   "type": "BuiltinCommonInstructions::ForEach",
                   "object": "ToolBlockObject",
                   "conditions": [
@@ -1929,6 +1977,19 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Checks for every block and puts it into the previously created linked list ",
+                  "comment2": ""
                 },
                 {
                   "type": "BuiltinCommonInstructions::ForEach",
@@ -1976,6 +2037,19 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Update so new linked list can be created later",
+                  "comment2": ""
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -2342,7 +2416,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Block Iteration",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2401,7 +2474,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Block Selected",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2552,7 +2624,7 @@
               "parameters": [
                 "ToolBlockObject",
                 "<",
-                "ScreenWidth()*0.2 + 105"
+                "SceneWindowWidth()*0.1752"
               ]
             },
             {
