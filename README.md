@@ -1,6 +1,6 @@
 # Draggable Blocks
 
-The project stopped due to a lack of time and the limitations of GDevelop.
+The project stopped due to the limitations of GDevelop.
 
 Game Engine: GDevelop
 
